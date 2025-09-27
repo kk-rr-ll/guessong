@@ -1,0 +1,163 @@
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4895ef;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --success-color: #4cc9f0;
+  --danger-color: #f72585;
+  --border-radius: 12px;
+  --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.no-results {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 2rem;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+body {
+  background-color: #f5f7ff;
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+.game-list {
+  padding: 20px;
+}
+
+.game-list h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #4361ee, #3a0ca3);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.quizzes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+header-with-back {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.header-with-back h1 {
+  margin-bottom: 1;
+  flex: 1;
+  text-align: center;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: var(--border-radius);
+}
+
+.back-button:hover {
+  background-color: rgba(67, 97, 238, 0.1);
+  transform: translateX(-3px);
+}
+
+.back-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.sort-controls label {
+  font-weight: 500;
+  color: #555;
+}
+
+.sort-select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sort-select:hover {
+  border-color: #4361ee;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+@media (max-width: 768px) {
+  .game-list h1 {
+    font-size: 2rem;
+  }
+
+  .quizzes-list {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    padding: 1rem;
+  }
+
+  .header-with-back {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .header-with-back h1 {
+    font-size: 1.8rem;
+  }
+
+  .back-button {
+    align-self: flex-start;
+    padding: 4rem;
+  }
+}

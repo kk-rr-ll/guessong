@@ -1,0 +1,39 @@
+.rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 5px 0px;
+}
+
+.star {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.star.full {
+  color: #ffd700; 
+}
+
+.star.half {
+  position: relative;
+  color: #ddd;
+}
+
+.star.half::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #ffd700;
+}
+
+.star.empty {
+  color: #ddd; 
+}
+
+.votes-count {
+  font-size: 0.8rem;
+  color: #777;
+  margin-left: 5px;
+}

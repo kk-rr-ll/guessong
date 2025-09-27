@@ -1,0 +1,192 @@
+/* стили модального окна */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.auth-modal {
+  position: relative;
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIne 0.3s ease-out;
+}
+
+@keyframes fadeIne {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+.auth-modal h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  text-align: center;
+  font-size: 24px;
+}
+
+/* Стили для форм */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-group input.error {
+  border-color: #e74c3c;
+}
+
+.error-text {
+  display: block;
+  margin-top: 6px;
+  color: #e74c3c;
+  font-size: 14px;
+}
+
+/* Кнопки */
+.primary-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.primary-button:hover {
+  background-color: #2980b9;
+}
+
+.primary-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.text-button {
+  background: none;
+  border: none;
+  color: #3498db;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.text-button:hover {
+  color: #2980b9;
+}
+
+/* Сообщения сервера */
+.server-message {
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #f8d7da;
+  color: #721c24;
+  font-size: 14px;
+}
+
+.server-message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* Футер формы */
+.form-footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Анимация загрузки */
+@keyframes spine {
+  to { transform: rotate(360deg); }
+}
+
+.primary-button:disabled::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spine 1s ease-in-out infinite;
+  vertical-align: middle;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .auth-modal {
+    padding: 20px;
+    margin: 0 15px;
+  }
+  
+  .auth-modal h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group input {
+    padding: 10px 12px;
+  }
+  
+  .primary-button {
+    padding: 12px;
+  }
+}

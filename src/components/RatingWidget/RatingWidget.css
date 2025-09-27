@@ -1,0 +1,22 @@
+.rating-widget {
+  display: flex;
+  gap: 5px;
+}
+
+.rating-widget .star {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ddd;
+  transition: color 0.2s;
+  padding: 0;
+}
+
+.rating-widget .star.active {
+  color: #ffd700;
+}
+
+.rating-widget .star:hover {
+  transform: scale(1.1);
+}
